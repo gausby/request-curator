@@ -11,7 +11,7 @@ The following task:
 
 ## Usage
 
-    app.use(get-curious())
+    app.use(curator())
 
 ## Development
 
