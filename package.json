@@ -25,6 +25,7 @@
     "grunt-mocha-test": "^0.11.0"
   },
   "dependencies": {
+    "operandi": "0.0.6",
     "superagent": "^0.18.0"
   }
 }
