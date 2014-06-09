@@ -71,6 +71,22 @@ describe('Request curator', function() {
                     'Cannot GET /api/bar\n'
                 ]
             });
+
+            done();
+        });
+    });
+
+    it('should pass on its headers on to the following requests', function(done) {
+        var agent = superagent.agent();
+
+        // an endpoint that just return the passed in headers
+        app.get('/return-header', function(req, res) {
+            res.json(req.headers);
+        });
+
+        agent.get('localhost:3000/multi?headers=/return-header').set('foo', 'bar').end(function(res) {
+            assert.equal(res.body.headers.foo, 'bar');
+
             done();
         });
     });
