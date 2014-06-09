@@ -1,6 +1,6 @@
 {
   "name": "request-curator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "git@github.com:gausby/request-curator.git",
   "description": "An Express middleware that makes it possible to get multiple end points in one go",
   "main": "lib/request-curator.js",
