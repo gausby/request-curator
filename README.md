@@ -1,4 +1,7 @@
-# Express Request Curator
+Express Request Curator
+=======================
+[![Build Status](https://secure.travis-ci.org/gausby/request-curator.svg?branch=master "Build Status")](http://travis-ci.org/gausby/request-curator)
+
 Request Curator is a middleware for [Express](http://expressjs.com) that makes it possible to GET multiple resources in one go. It should be easy to inject into any existing Express application/api. It is especially useful in single page applications that need to get the response of multiple api endpoints.
 
 
