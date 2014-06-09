@@ -19,7 +19,9 @@ describe('Request curator', function() {
         var agent = superagent.agent();
         agent.get('localhost:3000/multi').end(function(err, res) {
             assert.equal(res.statusCode, 200);
+            // an empty object is returned if no parameters has been passed in
             assert.deepEqual(res.body, {});
+
             done();
         });
     });
@@ -27,11 +29,12 @@ describe('Request curator', function() {
     it('should set a `multi` key on the request object', function(done){
         var agent = superagent.agent();
         app.get('/raw', curator(), function(req, res) {
-            assert.equal(typeof req.multi, 'object');
-            res.send('ok');
+            res.json(req.multi);
         });
 
         agent.get('localhost:3000/raw?test=/api/countries').end(function(res) {
+            assert.equal(typeof res, 'object');
+
             done();
         });
     });
@@ -44,6 +47,7 @@ describe('Request curator', function() {
                 res.body,
                 { country: ['Denmark', 'Sweden', 'Norway'] }
             );
+
             done();
         });
     });
@@ -56,6 +60,7 @@ describe('Request curator', function() {
                 user: {name: 'John Doe', age: 23},
                 country: ['Denmark', 'Sweden', 'Norway']
             });
+
             done();
         });
     });
