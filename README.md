@@ -6,7 +6,7 @@ Request Curator is a middleware for [Express](http://expressjs.com) that makes i
 
 
 ## Installation
-The project is available on NPM via `npm install request-curator --save`. When it is installed available using `require('request-curator')`.
+The project is available on NPM via `npm install request-curator --save`. When it is installed it will be available using `require('request-curator')`.
 
 
 ## Usage
